@@ -1,5 +1,7 @@
 As a user,
 
+I want to be able to log in with my email address
+
 I want to be able to see a list of events
 
 I want to be able to select an event to attend
