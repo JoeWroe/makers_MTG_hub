@@ -1,3 +1,5 @@
+[![Circle CI](https://circleci.com/gh/MakersMTG/makers_MTG_hub/tree/master.png?style=badge&circle-token=:circle-token)](https://circleci.com/gh/MakersMTG/makers_MTG_hub/tree/master)
+
 # README
 
 This README would normally document whatever steps are necessary to get the
