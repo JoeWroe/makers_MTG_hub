@@ -35,3 +35,10 @@ As booze provider,
 I would like a way for people to opt in for booze
 
 I would like to collect payment before the event
+
+
+As food provider,
+
+I would like a way for people to opt in for food
+
+I would like to collect payment before the event
