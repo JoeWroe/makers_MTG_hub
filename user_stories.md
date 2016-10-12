@@ -1,5 +1,7 @@
 As a user,
 
+I want to be able to log in with my email address
+
 I want to be able to see a list of events
 
 I want to be able to select an event to attend
@@ -33,5 +35,12 @@ I want to be able to cap events at 8
 As booze provider,
 
 I would like a way for people to opt in for booze
+
+I would like to collect payment before the event
+
+
+As food provider,
+
+I would like a way for people to opt in for food
 
 I would like to collect payment before the event
