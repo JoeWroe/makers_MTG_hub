@@ -1,13 +1,24 @@
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
+
+  PROPERTIES = %i(name description game_format cost min_size max_size start_time).freeze
+  REQUIRED = %i(name description game_format cost start_time).freeze
+
   context "properties" do
-    it { is_expected.to respond_to(:name) }
-    it { is_expected.to respond_to(:description) }
-    it { is_expected.to respond_to(:type) }
-    it { is_expected.to respond_to(:cost) }
-    it { is_expected.to respond_to(:min_size) }
-    it { is_expected.to respond_to(:max_size) }
-    it { is_expected.to respond_to(:start_time) }
+    PROPERTIES.each do |property|
+      it { is_expected.to respond_to(property) }
+    end
+  end
+
+  context "validates presence of" do
+    it "required attributes" do
+      event = build(:event)
+      REQUIRED.each do |property|
+        event.assign_attributes(property => nil)
+        expect(event).not_to be_valid
+        expect(event).to have(1).error_on(property)
+      end
+    end
   end
 end

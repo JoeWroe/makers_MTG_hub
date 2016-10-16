@@ -1,0 +1,17 @@
+<%= form_for @event do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :game_format %>
+  <%= f.select(:game_format, Event::GAME_FORMATS) %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :cost %>
+  <%= f.text_field :cost %>
+  <%= f.label :min_size %>
+  <%= f.text_field :min_size %>
+  <%= f.label :max_size %>
+  <%= f.text_field :max_size %>
+  <%= f.label :start_time %>
+  <%= f.datetime_select(:start_time) %>
+  <%= f.submit %>
+<% end %>

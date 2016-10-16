@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20161015152852) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "name"
-    t.string   "type"
+    t.string   "game_format"
     t.text     "description"
     t.integer  "cost"
     t.integer  "min_size"

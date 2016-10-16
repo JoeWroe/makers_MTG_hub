@@ -37,6 +37,16 @@ group :development, :test do
   gem 'byebug', platform: :mri
 end
 
+group :test do
+  gem 'database_cleaner',         '1.5.1'
+  gem 'factory_girl',             '4.5.0'
+  gem 'rspec'
+  gem 'rspec-collection_matchers'
+  gem 'rspec-rails'
+  gem 'capybara', :git => 'https://github.com/jnicklas/capybara.git', :branch => 'master'
+  gem 'pry'
+end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
@@ -48,4 +58,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem "rspec-rails", :group => [:development, :test]

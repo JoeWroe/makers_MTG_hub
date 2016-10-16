@@ -13,7 +13,9 @@
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
     <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
+      <% alert.each do |msg| %>
+        <p class="alert alert-danger"><%= msg %></p>
+      <% end %>
     <% end %>
     <%= yield %>
   </body>

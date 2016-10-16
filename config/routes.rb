@@ -3,13 +3,5 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  get 'events/index'
-
-  get 'events/show'
-
-  get 'events/create'
-
-  get 'events/update'
-
-  get 'events/destroy'
+  resources :events
 end

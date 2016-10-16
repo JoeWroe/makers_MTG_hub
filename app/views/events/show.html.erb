@@ -1,2 +1,10 @@
 <h1>Events#show</h1>
 <p>Find me in app/views/events/show.html.erb</p>
+<h2><%= @event.name %></h2>
+<p><%= @event.description %></p>
+<p><%= @event.cost %></p>
+<p><%= @event.game_format %></p>
+<p><%= @event.start_time %></p>
+
+<%= link_to("edit", edit_event_path(@event)) %>
+<%= link_to("delete", event_path(@event), method: :delete) %>
