@@ -1,11 +1,6 @@
 [![Circle CI](https://circleci.com/gh/MakersMTG/makers_MTG_hub/tree/master.png?style=badge&circle-token=:circle-token)](https://circleci.com/gh/MakersMTG/makers_MTG_hub/tree/master)
 
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+Live site: https://makers-mtg-hub.herokuapp.com/
 
 ## Ruby version
 
@@ -18,11 +13,13 @@ Navigate to a projects directory and clone the repository
 ```bash
 > git clone https://github.com/MakersMTG/makers_MTG_hub.git
 ```
-Then `cd` into the directory. You'll want to `bundle install` next and then `bundle exec rake db:migrate`
+Then `cd` into the directory. You'll want to `bundle install` next.
 
 
 ## Database
 
+Ensure you're all set up with `psql`.
+To setup the databases run `bundle exec rake db:migrate`
 
 
 ## How to run the test suite
