@@ -1,5 +1,5 @@
 def make_an_event
-  click_link 'Add an event'
+  click_button 'Add an event'
   fill_in 'Name', with: "Edward's Event"
   find('#event_game_format').find(:xpath, 'option[2]').select_option
   fill_in 'Description', with: 'An Event that is inspiring'
@@ -13,7 +13,7 @@ def make_an_event
 end
 
 def make_event_with_missing_fields
-  click_link 'Add an event'
+  click_button 'Add an event'
   fill_in 'Name', with: "Edward's Event"
   click_button 'Create Event'
 end

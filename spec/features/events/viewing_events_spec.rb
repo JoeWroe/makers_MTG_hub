@@ -4,7 +4,7 @@ feature 'viewing events' do
   context 'no events have been added' do
     scenario 'should display a prompt to add an event' do
       visit '/events'
-      expect(page).to have_link 'Add an event'
+      expect(page).to have_button 'Add an event'
     end
   end
 
