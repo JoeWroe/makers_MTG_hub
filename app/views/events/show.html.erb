@@ -5,6 +5,11 @@
 <p><%= @event.cost %></p>
 <p><%= @event.game_format %></p>
 <p><%= @event.start_time %></p>
+<ul>
+  <% @event.users.each do |user| %>
+    <li>user.name</li>
+  <% end %>
+</ul>
 
 <%= link_to("edit", edit_event_path(@event)) %>
 <%= link_to("delete", event_path(@event), method: :delete) %>
