@@ -7,5 +7,6 @@ FactoryGirl.define do
     game_format "Draft"
     cost 12
     start_time 1.hour.ago
+    user
   end
 end

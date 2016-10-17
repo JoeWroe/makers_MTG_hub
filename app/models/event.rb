@@ -2,6 +2,7 @@ class Event < ApplicationRecord
   GAME_FORMATS = %i(sealed draft constructed).freeze
   REQUIRED = %i(name game_format description cost).freeze
 
+  belongs_to :user
   has_many :participants
   has_many :users, :through => :participants
 

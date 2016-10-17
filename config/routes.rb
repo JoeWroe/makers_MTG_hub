@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  resources :events
+  resources :events do
+    resources :participants
+  end
 end
