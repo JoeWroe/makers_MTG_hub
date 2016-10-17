@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @events = Event.all
   end
@@ -48,7 +50,7 @@ class EventsController < ApplicationController
   end
 
   def attributes
-    params.require(:event).permit(*Event::REQUIRED).merge(start_time: start_time)
+    params.require(:event).permit(*Event::REQUIRED).merge(start_time: start_time, user: current_user)
   end
 
   def start_time

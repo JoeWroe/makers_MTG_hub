@@ -7,5 +7,12 @@ FactoryGirl.define do
     game_format "Draft"
     cost 12
     start_time 1.hour.ago
+    user_id { create(:user).id }
+  end
+
+  factory :user do
+    email                  "user@example.com"
+    password               "password"
+    password_confirmation  "password"
   end
 end

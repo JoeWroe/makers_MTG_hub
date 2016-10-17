@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 feature 'creating events' do
+  before do
+    sign_up
+  end
+  
   context 'a valid event' do
     scenario 'User fills out form, event is created, new event displayed' do
       visit '/events'

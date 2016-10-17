@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 feature 'viewing events' do
+  before do
+    sign_up
+  end
+  
   context 'no events have been added' do
     scenario 'should display a prompt to add an event' do
       visit '/events'

@@ -3,6 +3,7 @@ require 'rails_helper'
 feature 'deleting events' do
   let!(:event) { create(:event) }
   before do
+    sign_up
     visit '/events'
     click_link event.name
   end
