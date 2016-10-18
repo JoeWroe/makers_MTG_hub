@@ -5,6 +5,9 @@
 <p><%= @event.cost %></p>
 <p><%= @event.game_format %></p>
 <p><%= @event.start_time %></p>
+<p>
+  Event created by: <%= @event.user.email %>
+</p>
 
 <%= link_to("edit", edit_event_path(@event)) %>
 <%= link_to("delete", event_path(@event), method: :delete) %>
