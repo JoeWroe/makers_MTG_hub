@@ -6,7 +6,7 @@ feature 'creating events' do
       visit '/events'
       expect { make_an_event }.to change(Event, :count).by(1)
       expect(page).to have_content "Edward's Event"
-      expect(page).to have_content "Event successully created"
+      expect(page).to have_content "Event successfully created"
       expect(current_path).to eq "/events/#{Event.last.id}"
     end
   end

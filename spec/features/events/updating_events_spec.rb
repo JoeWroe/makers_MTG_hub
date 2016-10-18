@@ -16,7 +16,7 @@ feature 'updating events' do
       click_button 'Update Event'
       expect(current_path).to eq "/events/#{event.id}"
       expect(page).to have_content("Jamie's Event")
-      expect(page).to have_content('Event successully updated')
+      expect(page).to have_content('Event successfully updated')
     end
   end
   context 'event not updated' do

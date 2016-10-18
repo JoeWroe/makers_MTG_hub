@@ -13,15 +13,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(attributes)
-    if @event.valid?
-      @event.save!
-      flash[:notice] = "Event successully created"
-      redirect_to event_path(@event)
-    else
-      flash[:notice] = "Event information not valid"
-      flash[:alert] = @event.errors
-      redirect_to new_event_path
-    end
+    @event.valid? ? successful(@event) : unsuccesful(@event)
   end
 
   def edit
@@ -31,24 +23,29 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     @event.assign_attributes(attributes)
-    if @event.valid?
-      flash[:notice] = "Event successully updated"
-      @event.save!
-      redirect_to event_path(@event)
-    else
-      flash[:notice] = "Event information not valid"
-      flash[:alert] = @event.errors
-      redirect_to edit_event_path(@event)
-    end
+    @event.valid? ? successful(@event, true) : unsuccesful(@event, true)
   end
 
   def destroy
     Event.destroy(params[:id])
-    flash[:notice] = "Event successully deleted"
+    flash[:notice] = "Event successfully deleted"
     redirect_to events_path
   end
 
   private
+
+  def unsuccesful(event, edit = false)
+    flash[:notice] = "Event information not valid"
+    flash[:alert] = event.errors
+    redirect_to edit ? edit_event_path : new_event_path
+  end
+
+
+  def successful(event, edit = false)
+    event.save!
+    flash[:notice] = "Event successfully #{ edit ? "updated" : "created" }"
+    redirect_to event_path(event)
+  end
 
   def attributes
     params.require(:event).permit(*Event::REQUIRED).merge(start_time: start_time)
