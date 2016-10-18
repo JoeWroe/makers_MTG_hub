@@ -11,14 +11,14 @@ feature 'viewing events' do
   end
 
   context 'Events have been added' do
-    let!(:event) { create(:event, name: "Ed's Event") }
+    let!(:event) { create(:event) }
     before { visit '/events' }
 
     scenario 'display events' do
       expect(page).to have_content(event.name)
     end
     scenario 'can click on event to see event details' do
-      click_link("Ed's Event")
+      click_link(event.name)
       expect(current_path).to eq "/events/#{event.id}"
       expect(page).to have_content(event.name)
       expect(page).to have_content(event.cost)
