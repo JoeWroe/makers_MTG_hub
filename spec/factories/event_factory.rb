@@ -9,10 +9,4 @@ FactoryGirl.define do
     start_time 1.hour.ago
     user_id { create(:user).id }
   end
-
-  factory :user do
-    email                  "user@example.com"
-    password               "password"
-    password_confirmation  "password"
-  end
 end
